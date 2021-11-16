@@ -58,7 +58,7 @@ class GCons(QGraphicsItem):
     """ A graphical cons base class """
 
     def __init__(self, car=None, cdr=None, parent=None, scene=None):
-        super().__init__(parent, scene)
+        super().__init__(parent)
         
         self.setFlags(QGraphicsItem.ItemIsMovable | QGraphicsItem.ItemIsSelectable | QGraphicsItem.ItemSendsGeometryChanges)
 
@@ -113,7 +113,7 @@ class GAtom(QGraphicsItem):
     """ An Graphical Atom to represent a Car """
 
     def __init__(self, value=None, parent=None, scene=None):
-        super().__init__(parent, scene)
+        super().__init__(parent)
 
         self.setFlags(QGraphicsItem.ItemIsMovable | QGraphicsItem.ItemIsSelectable | QGraphicsItem.ItemSendsGeometryChanges)
 
