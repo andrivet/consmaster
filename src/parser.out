@@ -1,0 +1,783 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> source
+Rule 1     source -> empty
+Rule 2     source -> lsource
+Rule 3     lsource -> expr
+Rule 4     lsource -> lsource expr
+Rule 5     expr -> atom
+Rule 6     expr -> list
+Rule 7     expr -> quote
+Rule 8     atom -> nil
+Rule 9     atom -> symbol
+Rule 10    atom -> integer
+Rule 11    atom -> string
+Rule 12    atom -> array
+Rule 13    quote -> ' expr
+Rule 14    list -> ( seq )
+Rule 15    list -> ( seq . expr )
+Rule 16    nil -> NIL
+Rule 17    nil -> ( )
+Rule 18    seq -> expr
+Rule 19    seq -> seq expr
+Rule 20    empty -> <empty>
+Rule 21    array -> # ( )
+Rule 22    array -> # ( seq )
+Rule 23    symbol -> SYMBOL
+Rule 24    string -> STRING
+Rule 25    integer -> INT
+
+Terminals, with rules where they appear
+
+#                    : 21 22
+'                    : 13
+(                    : 14 15 17 21 22
+)                    : 14 15 17 21 22
+.                    : 15
+INT                  : 25
+NIL                  : 16
+STRING               : 24
+SYMBOL               : 23
+error                : 
+
+Nonterminals, with rules where they appear
+
+array                : 12
+atom                 : 5
+empty                : 1
+expr                 : 3 4 13 15 18 19
+integer              : 10
+list                 : 6
+lsource              : 2 4
+nil                  : 8
+quote                : 7
+seq                  : 14 15 19 22
+source               : 0
+string               : 11
+symbol               : 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . source
+    (1) source -> . empty
+    (2) source -> . lsource
+    (20) empty -> .
+    (3) lsource -> . expr
+    (4) lsource -> . lsource expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    $end            reduce using rule 20 (empty -> .)
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    string                         shift and go to state 10
+    nil                            shift and go to state 11
+    lsource                        shift and go to state 2
+    symbol                         shift and go to state 13
+    list                           shift and go to state 19
+    expr                           shift and go to state 18
+    source                         shift and go to state 8
+    quote                          shift and go to state 12
+    atom                           shift and go to state 14
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    empty                          shift and go to state 9
+
+state 1
+
+    (23) symbol -> SYMBOL .
+
+    )               reduce using rule 23 (symbol -> SYMBOL .)
+    .               reduce using rule 23 (symbol -> SYMBOL .)
+    (               reduce using rule 23 (symbol -> SYMBOL .)
+    '               reduce using rule 23 (symbol -> SYMBOL .)
+    NIL             reduce using rule 23 (symbol -> SYMBOL .)
+    SYMBOL          reduce using rule 23 (symbol -> SYMBOL .)
+    INT             reduce using rule 23 (symbol -> SYMBOL .)
+    STRING          reduce using rule 23 (symbol -> SYMBOL .)
+    #               reduce using rule 23 (symbol -> SYMBOL .)
+    $end            reduce using rule 23 (symbol -> SYMBOL .)
+
+
+state 2
+
+    (2) source -> lsource .
+    (4) lsource -> lsource . expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    $end            reduce using rule 2 (source -> lsource .)
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    nil                            shift and go to state 11
+    expr                           shift and go to state 20
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 3
+
+    (12) atom -> array .
+
+    )               reduce using rule 12 (atom -> array .)
+    (               reduce using rule 12 (atom -> array .)
+    '               reduce using rule 12 (atom -> array .)
+    NIL             reduce using rule 12 (atom -> array .)
+    SYMBOL          reduce using rule 12 (atom -> array .)
+    INT             reduce using rule 12 (atom -> array .)
+    STRING          reduce using rule 12 (atom -> array .)
+    #               reduce using rule 12 (atom -> array .)
+    $end            reduce using rule 12 (atom -> array .)
+    .               reduce using rule 12 (atom -> array .)
+
+
+state 4
+
+    (24) string -> STRING .
+
+    )               reduce using rule 24 (string -> STRING .)
+    .               reduce using rule 24 (string -> STRING .)
+    (               reduce using rule 24 (string -> STRING .)
+    '               reduce using rule 24 (string -> STRING .)
+    NIL             reduce using rule 24 (string -> STRING .)
+    SYMBOL          reduce using rule 24 (string -> STRING .)
+    INT             reduce using rule 24 (string -> STRING .)
+    STRING          reduce using rule 24 (string -> STRING .)
+    #               reduce using rule 24 (string -> STRING .)
+    $end            reduce using rule 24 (string -> STRING .)
+
+
+state 5
+
+    (21) array -> # . ( )
+    (22) array -> # . ( seq )
+
+    (               shift and go to state 21
+
+
+state 6
+
+    (13) quote -> ' . expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    string                         shift and go to state 10
+    nil                            shift and go to state 11
+    expr                           shift and go to state 22
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+
+state 7
+
+    (14) list -> ( . seq )
+    (15) list -> ( . seq . expr )
+    (17) nil -> ( . )
+    (18) seq -> . expr
+    (19) seq -> . seq expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    )               shift and go to state 24
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    seq                            shift and go to state 23
+    nil                            shift and go to state 11
+    expr                           shift and go to state 25
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 8
+
+    (0) S' -> source .
+
+
+
+state 9
+
+    (1) source -> empty .
+
+    $end            reduce using rule 1 (source -> empty .)
+
+
+state 10
+
+    (11) atom -> string .
+
+    )               reduce using rule 11 (atom -> string .)
+    (               reduce using rule 11 (atom -> string .)
+    '               reduce using rule 11 (atom -> string .)
+    NIL             reduce using rule 11 (atom -> string .)
+    SYMBOL          reduce using rule 11 (atom -> string .)
+    INT             reduce using rule 11 (atom -> string .)
+    STRING          reduce using rule 11 (atom -> string .)
+    #               reduce using rule 11 (atom -> string .)
+    $end            reduce using rule 11 (atom -> string .)
+    .               reduce using rule 11 (atom -> string .)
+
+
+state 11
+
+    (8) atom -> nil .
+
+    )               reduce using rule 8 (atom -> nil .)
+    (               reduce using rule 8 (atom -> nil .)
+    '               reduce using rule 8 (atom -> nil .)
+    NIL             reduce using rule 8 (atom -> nil .)
+    SYMBOL          reduce using rule 8 (atom -> nil .)
+    INT             reduce using rule 8 (atom -> nil .)
+    STRING          reduce using rule 8 (atom -> nil .)
+    #               reduce using rule 8 (atom -> nil .)
+    $end            reduce using rule 8 (atom -> nil .)
+    .               reduce using rule 8 (atom -> nil .)
+
+
+state 12
+
+    (7) expr -> quote .
+
+    (               reduce using rule 7 (expr -> quote .)
+    '               reduce using rule 7 (expr -> quote .)
+    NIL             reduce using rule 7 (expr -> quote .)
+    SYMBOL          reduce using rule 7 (expr -> quote .)
+    INT             reduce using rule 7 (expr -> quote .)
+    STRING          reduce using rule 7 (expr -> quote .)
+    #               reduce using rule 7 (expr -> quote .)
+    $end            reduce using rule 7 (expr -> quote .)
+    )               reduce using rule 7 (expr -> quote .)
+    .               reduce using rule 7 (expr -> quote .)
+
+
+state 13
+
+    (9) atom -> symbol .
+
+    )               reduce using rule 9 (atom -> symbol .)
+    (               reduce using rule 9 (atom -> symbol .)
+    '               reduce using rule 9 (atom -> symbol .)
+    NIL             reduce using rule 9 (atom -> symbol .)
+    SYMBOL          reduce using rule 9 (atom -> symbol .)
+    INT             reduce using rule 9 (atom -> symbol .)
+    STRING          reduce using rule 9 (atom -> symbol .)
+    #               reduce using rule 9 (atom -> symbol .)
+    $end            reduce using rule 9 (atom -> symbol .)
+    .               reduce using rule 9 (atom -> symbol .)
+
+
+state 14
+
+    (5) expr -> atom .
+
+    (               reduce using rule 5 (expr -> atom .)
+    '               reduce using rule 5 (expr -> atom .)
+    NIL             reduce using rule 5 (expr -> atom .)
+    SYMBOL          reduce using rule 5 (expr -> atom .)
+    INT             reduce using rule 5 (expr -> atom .)
+    STRING          reduce using rule 5 (expr -> atom .)
+    #               reduce using rule 5 (expr -> atom .)
+    $end            reduce using rule 5 (expr -> atom .)
+    )               reduce using rule 5 (expr -> atom .)
+    .               reduce using rule 5 (expr -> atom .)
+
+
+state 15
+
+    (10) atom -> integer .
+
+    )               reduce using rule 10 (atom -> integer .)
+    (               reduce using rule 10 (atom -> integer .)
+    '               reduce using rule 10 (atom -> integer .)
+    NIL             reduce using rule 10 (atom -> integer .)
+    SYMBOL          reduce using rule 10 (atom -> integer .)
+    INT             reduce using rule 10 (atom -> integer .)
+    STRING          reduce using rule 10 (atom -> integer .)
+    #               reduce using rule 10 (atom -> integer .)
+    $end            reduce using rule 10 (atom -> integer .)
+    .               reduce using rule 10 (atom -> integer .)
+
+
+state 16
+
+    (16) nil -> NIL .
+
+    (               reduce using rule 16 (nil -> NIL .)
+    '               reduce using rule 16 (nil -> NIL .)
+    NIL             reduce using rule 16 (nil -> NIL .)
+    SYMBOL          reduce using rule 16 (nil -> NIL .)
+    INT             reduce using rule 16 (nil -> NIL .)
+    STRING          reduce using rule 16 (nil -> NIL .)
+    #               reduce using rule 16 (nil -> NIL .)
+    $end            reduce using rule 16 (nil -> NIL .)
+    )               reduce using rule 16 (nil -> NIL .)
+    .               reduce using rule 16 (nil -> NIL .)
+
+
+state 17
+
+    (25) integer -> INT .
+
+    (               reduce using rule 25 (integer -> INT .)
+    '               reduce using rule 25 (integer -> INT .)
+    NIL             reduce using rule 25 (integer -> INT .)
+    SYMBOL          reduce using rule 25 (integer -> INT .)
+    INT             reduce using rule 25 (integer -> INT .)
+    STRING          reduce using rule 25 (integer -> INT .)
+    #               reduce using rule 25 (integer -> INT .)
+    $end            reduce using rule 25 (integer -> INT .)
+    )               reduce using rule 25 (integer -> INT .)
+    .               reduce using rule 25 (integer -> INT .)
+
+
+state 18
+
+    (3) lsource -> expr .
+
+    (               reduce using rule 3 (lsource -> expr .)
+    '               reduce using rule 3 (lsource -> expr .)
+    NIL             reduce using rule 3 (lsource -> expr .)
+    SYMBOL          reduce using rule 3 (lsource -> expr .)
+    INT             reduce using rule 3 (lsource -> expr .)
+    STRING          reduce using rule 3 (lsource -> expr .)
+    #               reduce using rule 3 (lsource -> expr .)
+    $end            reduce using rule 3 (lsource -> expr .)
+
+
+state 19
+
+    (6) expr -> list .
+
+    (               reduce using rule 6 (expr -> list .)
+    '               reduce using rule 6 (expr -> list .)
+    NIL             reduce using rule 6 (expr -> list .)
+    SYMBOL          reduce using rule 6 (expr -> list .)
+    INT             reduce using rule 6 (expr -> list .)
+    STRING          reduce using rule 6 (expr -> list .)
+    #               reduce using rule 6 (expr -> list .)
+    $end            reduce using rule 6 (expr -> list .)
+    )               reduce using rule 6 (expr -> list .)
+    .               reduce using rule 6 (expr -> list .)
+
+
+state 20
+
+    (4) lsource -> lsource expr .
+
+    (               reduce using rule 4 (lsource -> lsource expr .)
+    '               reduce using rule 4 (lsource -> lsource expr .)
+    NIL             reduce using rule 4 (lsource -> lsource expr .)
+    SYMBOL          reduce using rule 4 (lsource -> lsource expr .)
+    INT             reduce using rule 4 (lsource -> lsource expr .)
+    STRING          reduce using rule 4 (lsource -> lsource expr .)
+    #               reduce using rule 4 (lsource -> lsource expr .)
+    $end            reduce using rule 4 (lsource -> lsource expr .)
+
+
+state 21
+
+    (21) array -> # ( . )
+    (22) array -> # ( . seq )
+    (18) seq -> . expr
+    (19) seq -> . seq expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    )               shift and go to state 27
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    seq                            shift and go to state 26
+    nil                            shift and go to state 11
+    expr                           shift and go to state 25
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 22
+
+    (13) quote -> ' expr .
+
+    )               reduce using rule 13 (quote -> ' expr .)
+    (               reduce using rule 13 (quote -> ' expr .)
+    '               reduce using rule 13 (quote -> ' expr .)
+    NIL             reduce using rule 13 (quote -> ' expr .)
+    SYMBOL          reduce using rule 13 (quote -> ' expr .)
+    INT             reduce using rule 13 (quote -> ' expr .)
+    STRING          reduce using rule 13 (quote -> ' expr .)
+    #               reduce using rule 13 (quote -> ' expr .)
+    .               reduce using rule 13 (quote -> ' expr .)
+    $end            reduce using rule 13 (quote -> ' expr .)
+
+
+state 23
+
+    (14) list -> ( seq . )
+    (15) list -> ( seq . . expr )
+    (19) seq -> seq . expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    )               shift and go to state 28
+    .               shift and go to state 30
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    nil                            shift and go to state 11
+    expr                           shift and go to state 29
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 24
+
+    (17) nil -> ( ) .
+
+    (               reduce using rule 17 (nil -> ( ) .)
+    '               reduce using rule 17 (nil -> ( ) .)
+    NIL             reduce using rule 17 (nil -> ( ) .)
+    SYMBOL          reduce using rule 17 (nil -> ( ) .)
+    INT             reduce using rule 17 (nil -> ( ) .)
+    STRING          reduce using rule 17 (nil -> ( ) .)
+    #               reduce using rule 17 (nil -> ( ) .)
+    $end            reduce using rule 17 (nil -> ( ) .)
+    )               reduce using rule 17 (nil -> ( ) .)
+    .               reduce using rule 17 (nil -> ( ) .)
+
+
+state 25
+
+    (18) seq -> expr .
+
+    )               reduce using rule 18 (seq -> expr .)
+    .               reduce using rule 18 (seq -> expr .)
+    (               reduce using rule 18 (seq -> expr .)
+    '               reduce using rule 18 (seq -> expr .)
+    NIL             reduce using rule 18 (seq -> expr .)
+    SYMBOL          reduce using rule 18 (seq -> expr .)
+    INT             reduce using rule 18 (seq -> expr .)
+    STRING          reduce using rule 18 (seq -> expr .)
+    #               reduce using rule 18 (seq -> expr .)
+
+
+state 26
+
+    (22) array -> # ( seq . )
+    (19) seq -> seq . expr
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    )               shift and go to state 31
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    nil                            shift and go to state 11
+    expr                           shift and go to state 29
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 27
+
+    (21) array -> # ( ) .
+
+    )               reduce using rule 21 (array -> # ( ) .)
+    .               reduce using rule 21 (array -> # ( ) .)
+    (               reduce using rule 21 (array -> # ( ) .)
+    '               reduce using rule 21 (array -> # ( ) .)
+    NIL             reduce using rule 21 (array -> # ( ) .)
+    SYMBOL          reduce using rule 21 (array -> # ( ) .)
+    INT             reduce using rule 21 (array -> # ( ) .)
+    STRING          reduce using rule 21 (array -> # ( ) .)
+    #               reduce using rule 21 (array -> # ( ) .)
+    $end            reduce using rule 21 (array -> # ( ) .)
+
+
+state 28
+
+    (14) list -> ( seq ) .
+
+    )               reduce using rule 14 (list -> ( seq ) .)
+    (               reduce using rule 14 (list -> ( seq ) .)
+    '               reduce using rule 14 (list -> ( seq ) .)
+    NIL             reduce using rule 14 (list -> ( seq ) .)
+    SYMBOL          reduce using rule 14 (list -> ( seq ) .)
+    INT             reduce using rule 14 (list -> ( seq ) .)
+    STRING          reduce using rule 14 (list -> ( seq ) .)
+    #               reduce using rule 14 (list -> ( seq ) .)
+    .               reduce using rule 14 (list -> ( seq ) .)
+    $end            reduce using rule 14 (list -> ( seq ) .)
+
+
+state 29
+
+    (19) seq -> seq expr .
+
+    )               reduce using rule 19 (seq -> seq expr .)
+    .               reduce using rule 19 (seq -> seq expr .)
+    (               reduce using rule 19 (seq -> seq expr .)
+    '               reduce using rule 19 (seq -> seq expr .)
+    NIL             reduce using rule 19 (seq -> seq expr .)
+    SYMBOL          reduce using rule 19 (seq -> seq expr .)
+    INT             reduce using rule 19 (seq -> seq expr .)
+    STRING          reduce using rule 19 (seq -> seq expr .)
+    #               reduce using rule 19 (seq -> seq expr .)
+
+
+state 30
+
+    (15) list -> ( seq . . expr )
+    (5) expr -> . atom
+    (6) expr -> . list
+    (7) expr -> . quote
+    (8) atom -> . nil
+    (9) atom -> . symbol
+    (10) atom -> . integer
+    (11) atom -> . string
+    (12) atom -> . array
+    (14) list -> . ( seq )
+    (15) list -> . ( seq . expr )
+    (13) quote -> . ' expr
+    (16) nil -> . NIL
+    (17) nil -> . ( )
+    (23) symbol -> . SYMBOL
+    (25) integer -> . INT
+    (24) string -> . STRING
+    (21) array -> . # ( )
+    (22) array -> . # ( seq )
+
+    (               shift and go to state 7
+    '               shift and go to state 6
+    NIL             shift and go to state 16
+    SYMBOL          shift and go to state 1
+    INT             shift and go to state 17
+    STRING          shift and go to state 4
+    #               shift and go to state 5
+
+    nil                            shift and go to state 11
+    expr                           shift and go to state 32
+    symbol                         shift and go to state 13
+    atom                           shift and go to state 14
+    list                           shift and go to state 19
+    quote                          shift and go to state 12
+    integer                        shift and go to state 15
+    array                          shift and go to state 3
+    string                         shift and go to state 10
+
+state 31
+
+    (22) array -> # ( seq ) .
+
+    )               reduce using rule 22 (array -> # ( seq ) .)
+    .               reduce using rule 22 (array -> # ( seq ) .)
+    (               reduce using rule 22 (array -> # ( seq ) .)
+    '               reduce using rule 22 (array -> # ( seq ) .)
+    NIL             reduce using rule 22 (array -> # ( seq ) .)
+    SYMBOL          reduce using rule 22 (array -> # ( seq ) .)
+    INT             reduce using rule 22 (array -> # ( seq ) .)
+    STRING          reduce using rule 22 (array -> # ( seq ) .)
+    #               reduce using rule 22 (array -> # ( seq ) .)
+    $end            reduce using rule 22 (array -> # ( seq ) .)
+
+
+state 32
+
+    (15) list -> ( seq . expr . )
+
+    )               shift and go to state 33
+
+
+state 33
+
+    (15) list -> ( seq . expr ) .
+
+    )               reduce using rule 15 (list -> ( seq . expr ) .)
+    (               reduce using rule 15 (list -> ( seq . expr ) .)
+    '               reduce using rule 15 (list -> ( seq . expr ) .)
+    NIL             reduce using rule 15 (list -> ( seq . expr ) .)
+    SYMBOL          reduce using rule 15 (list -> ( seq . expr ) .)
+    INT             reduce using rule 15 (list -> ( seq . expr ) .)
+    STRING          reduce using rule 15 (list -> ( seq . expr ) .)
+    #               reduce using rule 15 (list -> ( seq . expr ) .)
+    .               reduce using rule 15 (list -> ( seq . expr ) .)
+    $end            reduce using rule 15 (list -> ( seq . expr ) .)
+
