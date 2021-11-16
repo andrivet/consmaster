@@ -139,7 +139,7 @@ cython_debug/
 
 /.python-version
 /.idea
-/.DS_Store
+.DS_Store
 
 # Generated files
 data/cm-bdd.dat
