@@ -16,7 +16,13 @@ Ce programme a pour but de vous permettre de vous entrainer à manipuler les dif
 
 # INSTALLATION (sous ubuntu)
 
-Pour installer Consmaster, décompressez l'archive dans le répertoire de votre choix. Consmaster peut fonctionner en mode portable depuis le répertoire dans lequel vous l'avez mis.
+Pour installer Consmaster, téléchargez et décompressez l'archive dans le répertoire de votre choix:
+
+    wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
+    unzip consmaster.zip
+    cd consmaster-master
+
+Consmaster peut fonctionner en mode portable depuis le répertoire dans lequel vous l'avez mis.
 
 Dans la console, utilisez la commande `cd` pour vous placer dans le répertoire `consmaster`.
 
@@ -24,7 +30,7 @@ Pour installer toutes les dépendances de Consmaster, entrer la commande:
 
     bash install-ubuntu.sh
 
-Soyez patient, le téléchargement des dépendances prend plusieurs minutes. Après installation, vous pouvez lancer Consmaster avec la commande:
+Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** (environ 300 MiB à télécharger). Après installation, vous pouvez lancer Consmaster avec la commande:
 
     python3 src/consmaster.py
 
