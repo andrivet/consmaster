@@ -53,8 +53,8 @@ class Config(QDialog):
             errMsg.append('- Hostname vide')
 
         self.port = self.portLine.text().strip()
-        regex = QRegularExpression(r'[0-9]{1,5}', \
-                Qt.CaseInsensitive, QRegularExpression.RegExp2)
+        regex = QRegularExpression(r'[0-9]{1,5}')
+        regex.setPatternOptions(QRegularExpression.PatternOption.CaseInsensitiveOption)
         validator = QRegularExpressionValidator(regex, self)
         if not self.port:
             errMsg.append('- Vous devez spécifier un port valide')

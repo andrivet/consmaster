@@ -53,8 +53,8 @@ class AddUser(QDialog):
             errMsg.append('- Ce nom existe déjà')
 
         email = self.emailLineEdit.text().strip()
-        regex = QRegularExpression(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', \
-                Qt.CaseInsensitive, QRegularExpression.RegExp2)
+        regex = QRegularExpression(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}')
+        regex.setPatternOptions(QRegularExpression.PatternOption.CaseInsensitiveOption)
         validator = QRegularExpressionValidator(regex, self)
         if not email:
             errMsg.append('- Vous devez spécifier un email valide')
