@@ -49,7 +49,7 @@ class LispInputDialog(QDialog):
         dlg = LispInputDialog(title, label)
         if default:
             dlg.lineEdit.setText(default)
-        if dlg.exec_() == QDialog.Accepted:
+        if dlg.exec() == QDialog.Accepted:
             return dlg.lineEdit.text()
 
 

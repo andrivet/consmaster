@@ -142,7 +142,7 @@ class Client(QMainWindow):
 
     def addUser(self):
         dlg = AddUser(self.data, self)
-        ret = dlg.exec_()
+        ret = dlg.exec()
         if ret == QDialog.Accepted:
             self.userMenu.clear()
             self.setUserMenu(self.userMenu)
@@ -165,7 +165,7 @@ class Client(QMainWindow):
 
     def getStats(self):
         # TODO: activer seulement si un user existe
-        StatsDialog(self.currentUser).exec_()
+        StatsDialog(self.currentUser).exec()
 
     def initStatusBar(self):
         self.userWid = QLabel()
@@ -193,7 +193,7 @@ class Client(QMainWindow):
 
     def networkConfig(self):
         form = Config(**CM_DATA['connexion_params'])
-        ret = form.exec_()
+        ret = form.exec()
         if ret == QDialog.Accepted:
             CM_DATA['connexion_params'] = {'host': form.hostname, 'port': form.port}
             CM_DATA.sync()
@@ -214,4 +214,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     client = Client()
     client.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
