@@ -23,11 +23,12 @@ from cm_connexion import send_exercices
 from cm_config import *
 
 
-VERSION = '0.5'
+VERSION = '0.6'
 AUTHORS = [
     'Josué Melka',
     'Calev Eliacheff',
-    'David Calmeille'
+    'David Calmeille',
+    'Sébastien Andrivet (portage PySide6)'
 ]
 
 
