@@ -268,7 +268,7 @@ class GlispWidget(QGraphicsView):
         self.scene().applyLayout(positions)
 
     def takeScreenshot(self):
-        pixmap = QPixmap.grabWidget(self)
+        pixmap = QWidget.grab(self)
         
         filename, filt = QFileDialog.getSaveFileName(self, 'Enregistrer sous', QDir.homePath(), "Images (*.png)")
         
