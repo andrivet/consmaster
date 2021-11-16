@@ -1,0 +1,4 @@
+pyside6
+sqlalchemy
+igraph
+ply
