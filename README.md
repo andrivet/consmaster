@@ -23,7 +23,11 @@ Pour installer toutes les dépendances de Consmaster, entrer la commande:
 
     bash install-ubuntu.sh
 
-Soyez patient, le téléchargement des dépences prend plusieurs minutes.
+Soyez patient, le téléchargement des dépendances prend plusieurs minutes. Après installation, vous pouvez lancer Consmaster avec la commande:
+
+    python3 src/consmaster.py
+
+**Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plue le cas.*
 
 # REMARQUES GÉNÉRALES
 
@@ -65,13 +69,9 @@ La aussi le pretty print n'est pas vérifié. Faites attention à bien respecter
 
 Pour créer des schémas pour répondre aux exercices du cours de lisp, vous pouvez lancer le programme Cons_drawing :
 
-Placez-vous une fois de plus dans le répertoire `src` de `consmaster` :
+Depuis le répertoire `consmaster`, lancer la commande :
 
-    cd consmaster/src
-
-Puis lancez :
-
-    python3 cons_drawing.py
+    python3 src/cons_drawing.py
 
 Vous pouvez dessiner votre schéma correspondant avec les mêmes outils que dans Consmaster. Vous pouvez alors enregistrer le schéma en cliquant sur le bouton "prendre une capture". Choisissez un nom et un emplacement pour enregistrer l'image.
 Vous pouvez ensuite importer cette image dans votre traitement de texte favori pour rédiger les réponses aux exercices.

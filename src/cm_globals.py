@@ -14,13 +14,13 @@ HOST, PORT = 'localhost', 9993
 Mode = namedtuple('Mode', ['name', 'src', 'type'])
 
 MODES = [
-    Mode("Standard <-> Dotted", '../data/norm-dot.html', '__NDN__'),
-    Mode("Expr -> Graphique", '../data/norm-graph.html', '__NG__'),
-    Mode("Graphique -> Expr", '../data/graph-norm.html', '__GN__'),
+    Mode("Standard <-> Dotted", './data/norm-dot.html', '__NDN__'),
+    Mode("Expr -> Graphique", './data/norm-graph.html', '__NG__'),
+    Mode("Graphique -> Expr", './data/graph-norm.html', '__GN__'),
         ]
 
 
-DATA_DIR = '../data/'
+DATA_DIR = './data/'
 
 if not os.path.exists(DATA_DIR):
     os.mkdir(DATA_DIR)
