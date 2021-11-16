@@ -25,6 +25,7 @@ class LispScene(QGraphicsScene):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.graph = DiGraph()
+        self.setBackgroundBrush(Qt.lightGray)
 
     def addObj(self, obj):
         """
