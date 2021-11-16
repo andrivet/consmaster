@@ -78,7 +78,7 @@ class ExosList(QWidget):
         self.lst.setHorizontalHeaderLabels([" Exercice ", "Niveau", "Niveau"])
         self.lst.setColumnHidden(1, True)
         # self.lst.setColumnWidth(0, 100)
-        self.lst.horizontalHeader().setResizeMode(0, QHeaderView.Stretch)
+        self.lst.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
         self.lst.setSelectionMode(QAbstractItemView.SingleSelection)
         self.lst.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.lst.setEditTriggers(QAbstractItemView.NoEditTriggers)
