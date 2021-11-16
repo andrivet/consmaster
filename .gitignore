@@ -140,3 +140,9 @@ cython_debug/
 /.python-version
 /.idea
 /.DS_Store
+
+# Generated files
+data/cm-bdd.dat
+data/cm.dat
+src/pylisp/parser.out
+src/pylisp/parsetab.py
