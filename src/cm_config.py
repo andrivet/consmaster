@@ -4,10 +4,11 @@
 import sys
 
 try:
-    from PySide.QtCore import *
-    from PySide.QtGui import *
+    from PySide6.QtCore import *
+    from PySide6.QtGui import *
+    from PySide6.QtWidgets import *
 except:
-    print ("Error: This program needs PySide module.", file=sys.stderr)
+    print ("Error: This program needs PySide6 module.", file=sys.stderr)
     sys.exit(1)
 
 
@@ -52,9 +53,9 @@ class Config(QDialog):
             errMsg.append('- Hostname vide')
 
         self.port = self.portLine.text().strip()
-        regex = QRegExp(r'[0-9]{1,5}', \
-                Qt.CaseInsensitive, QRegExp.RegExp2)
-        validator = QRegExpValidator(regex, self)
+        regex = QRegularExpression(r'[0-9]{1,5}', \
+                Qt.CaseInsensitive, QRegularExpression.RegExp2)
+        validator = QRegularExpressionValidator(regex, self)
         if not self.port:
             errMsg.append('- Vous devez spécifier un port valide')
         elif validator.validate(self.port, 0)[0] != QValidator.Acceptable:

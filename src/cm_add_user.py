@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+import sys
 
 try:
-    from PySide.QtCore import *
-    from PySide.QtGui import *
+    from PySide6.QtCore import *
+    from PySide6.QtGui import *
+    from PySide6.QtWidgets import *
 except:
-    print ("Error: This program needs PySide module.", file=sys.stderr)
+    print ("Error: This program needs PySide6 module.", file=sys.stderr)
     sys.exit(1)
 
 from cm_monitor import UserData
@@ -51,9 +53,9 @@ class AddUser(QDialog):
             errMsg.append('- Ce nom existe déjà')
 
         email = self.emailLineEdit.text().strip()
-        regex = QRegExp(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', \
-                Qt.CaseInsensitive, QRegExp.RegExp2)
-        validator = QRegExpValidator(regex, self)
+        regex = QRegularExpression(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', \
+                Qt.CaseInsensitive, QRegularExpression.RegExp2)
+        validator = QRegularExpressionValidator(regex, self)
         if not email:
             errMsg.append('- Vous devez spécifier un email valide')
         elif validator.validate(email, 0)[0] != QValidator.Acceptable:

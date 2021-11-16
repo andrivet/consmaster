@@ -4,10 +4,11 @@
 import sys
 
 try:
-    from PySide.QtCore import *
-    from PySide.QtGui import *
+    from PySide6.QtCore import *
+    from PySide6.QtGui import *
+    from PySide6.QtWidgets import *
 except:
-    print ("Error: This program needs PySide module.", file=sys.stderr)
+    print ("Error: This program needs PySide6 module.", file=sys.stderr)
     sys.exit(1)
     
 from threading import Thread
