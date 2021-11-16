@@ -81,8 +81,8 @@ class GCons(QGraphicsItem):
 
     def paint(self, painter, option, widget=None):
         painter.setPen(self.penColor)
-        painter.drawRoundRect(0, 0, self.wSize / 2 - 1, self.hSize)
-        painter.drawRoundRect(self.wSize / 2, 0, self.wSize / 2, self.hSize)
+        painter.drawRoundedRect(0, 0, self.wSize / 2 - 1, self.hSize, 2, 2)
+        painter.drawRoundedRect(self.wSize / 2, 0, self.wSize / 2, self.hSize, 2, 2)
         # ~ Drawing / if car/cdr is Nil
         if self.car == None:
             painter.drawLine(0 + 2, self.hSize - 2, self.wSize / 2 - 2, 0 + 2)
