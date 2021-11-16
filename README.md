@@ -4,6 +4,7 @@
 ## Consmaster version 0.6
 
 Consmaster a été porté sur PySide6 (Qt6) par Sébastien Andrivet parce que la version précédente utilisait PySide qui ne s'installe plus sur les versions récentes de Linux (Ubuntu, Debian).
+Cette version s'appuie sur la version 0.5 et aussi sur le travail de gsebg (https://github.com/gsebg/consmaster_patch).
 
 
 ## Consmaster version 0.5
