@@ -102,7 +102,7 @@ Sous Windows 10 et 11, la commande est légèrement différente:
 
     python.exe .\src\consmaster.py
 
-**Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plue le cas.*
+**Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plus le cas.*
 
 
 # REMARQUES GÉNÉRALES
