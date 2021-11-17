@@ -1,53 +1,98 @@
 
-# Historique
-
-## Consmaster version 0.6
-
-Consmaster a été porté sur PySide6 (Qt6) par Sébastien Andrivet parce que la version précédente utilisait PySide qui ne s'installe plus sur les versions récentes de Linux (Ubuntu, Debian).
-Cette version s'appuie sur la version 0.5 et aussi sur le travail de gsebg (https://github.com/gsebg/consmaster_patch).
-
-
-## Consmaster version 0.5
-
-Consmaster a été réalisé par Josué Melka, Calev Eliacheff et David Calmeille dans le cadre du projet de L2.
+# INTRODUCTION
 
 Ce programme a pour but de vous permettre de vous entrainer à manipuler les différentes représentations lisp : listes simples, notation à points et représentation graphique des doublets.
 
+![](doc/consmaster.png)
+Interface de Consmaster
 
-# INSTALLATION (sous Ubuntu ou Debian)
+![](doc/cons_drawing.png)
+Interface de Cons-Drawing
 
-Pour installer Consmaster, téléchargez et décompressez l'archive dans le répertoire de votre choix:
+
+# COMPATIBILITE
+
+Consmaster est compatible et a été testé avec Debian, Ubuntu, Fedora, macOS et Windows.
+
+A cause d'un bug dans Qt6 (qui se propage dans PySide6), il manque une dépendance lorsque l'on installe PySide6.
+Pour la majorité des systèmes d'exploitation, il existe une solution (workaround) mais actuellement pas pour CentOS et RedHat.
+
+Le détail des systèmes d'exploitation testés est le suivant:
+
+* Debian: 
+* Ubuntu: 2020.04, 2021.10
+* Fedora: 35 Workstation
+* macOS: Catalina, Monterey
+* Windows: 10, 11
+
+
+# INSTALLATION
+
+Pour installer Consmaster, vous devez tout d'abord récupérer les sources puis lancer le script qui correspond à votre système d'exploitation.
+
+## Récupération des sources
+
+Ouvrir un Terminal, téléchargez et décompressez l'archive dans le répertoire de votre choix:
 
     wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
     unzip consmaster.zip
     cd consmaster-master
+
+Sous Windows 10 et 11, les commandes sont légèrement différentes.
+Ouvrir un Windows Terminal ou Windows Powershell (pour les anciennes versions de Windows) et entrer les commandes:
+
+    wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
+    Expand-Archive -LiteralPath consmaster.zip
+    cd consmaster/consmaster-master
+
+## Installation des dépendances
+
+Note: Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** (environ 300 MiB à télécharger).
+
+### Ubuntu ou Debian
 
 Pour installer toutes les dépendances de Consmaster, entrer la commande:
 
     bash install-ubuntu.sh
 
-Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** (environ 300 MiB à télécharger). Après installation, vous pouvez lancer Consmaster avec la commande:
-
-    python3 src/consmaster.py
-
-**Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plue le cas.*
-
-
-# INSTALLATION (sous Fedora)
-
-Pour installer Consmaster, téléchargez et décompressez l'archive dans le répertoire de votre choix:
-
-    wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
-    unzip consmaster.zip
-    cd consmaster-master
+### Fedora
 
 Pour installer toutes les dépendances de Consmaster, entrer la commande:
 
     bash install-fedora.sh
 
-Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** (environ 300 MiB à télécharger). Après installation, vous pouvez lancer Consmaster avec la commande:
+## Windows 10 et 11
+
+Installer Python 3, si ce n'est pas déjà fait, depuis Python.org:
+
+    https://www.python.org/downloads/
+
+Puis ouvrir dans le Terminal précédemment ouvert (partie Récupération des sources), entrer la commande:
+
+    pip3 install -r requirements.txt
+
+## macOS
+
+Installer Python 3, si ce n'est pas déjà fait, depuis Python.org:
+
+    https://www.python.org/downloads/
+
+Puis ouvrir un terminal et entrer la commande:
+
+    pip3 install -r requirements.txt
+
+
+# LANCER CONSMASTER
+
+Après installation, vous pouvez lancer Consmaster avec la commande:
 
     python3 src/consmaster.py
+
+Sous Windows 10 et 11, la commande est légèrement différente:
+
+    python.exe .\src\consmaster.py
+
+**Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plue le cas.*
 
 
 # REMARQUES GÉNÉRALES
@@ -96,5 +141,21 @@ Depuis le répertoire `consmaster`, lancer la commande :
 
     python3 src/cons_drawing.py
 
+Sous Windows 10 et 11, la commande est légèrement différente:
+
+    python.exe .\src\cons_drawing.py
+
 Vous pouvez dessiner votre schéma correspondant avec les mêmes outils que dans Consmaster. Vous pouvez alors enregistrer le schéma en cliquant sur le bouton "prendre une capture". Choisissez un nom et un emplacement pour enregistrer l'image.
 Vous pouvez ensuite importer cette image dans votre traitement de texte favori pour rédiger les réponses aux exercices.
+
+# Historique
+
+## Version 0.6
+
+Consmaster a été porté sur PySide6 (Qt6) par Sébastien Andrivet parce que la version précédente utilisait PySide qui ne s'installe plus sur les versions récentes de Linux (Ubuntu, Debian).
+Cette version s'appuie sur la version 0.5 et aussi sur le travail de gsebg (https://github.com/gsebg/consmaster_patch).
+
+
+## Version 0.5
+
+Consmaster a été réalisé par Josué Melka, Calev Eliacheff et David Calmeille dans le cadre du projet de L2.
