@@ -19,22 +19,32 @@ Pour la majorité des systèmes d'exploitation, il existe une solution (workarou
 
 Le détail des systèmes d'exploitation testés est le suivant:
 
-* Debian: 
+* Debian: 10, 11
 * Ubuntu: 2020.04, 2021.10
 * Fedora: 35 Workstation
-* macOS: Catalina, Monterey
+* macOS: Catalina (10.15), Big Sur (11), Monterey (12)
 * Windows: 10, 11
 
 
 # INSTALLATION
 
+**Note**: *Comme souvent en informatique, il y a de multiples manières de faire quelque chose.
+Les procédures d'installation ci-dessous sont juste une de ces manières.*
+
 Pour installer Consmaster, vous devez tout d'abord récupérer les sources puis lancer le script qui correspond à votre système d'exploitation.
 
 ## Récupération des sources
 
-Ouvrir un Terminal, téléchargez et décompressez l'archive dans le répertoire de votre choix:
+Ouvrir un Terminal et téléchargez l'archive dans le répertoire de votre choix:
 
     wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
+
+Si vous n'avez pas `wget` (c'est le cas par défaut sous macOS), vous pouvez utiliser `curl` à la place:
+
+    curl -L -o consmaster.zip https://github.com/andrivet/consmaster/archive/refs/heads/master.zip
+
+Puis décompressez l'archive dans le répertoire de votre choix:
+
     unzip consmaster.zip
     cd consmaster-master
 
@@ -73,13 +83,13 @@ Puis ouvrir dans le Terminal précédemment ouvert (partie Récupération des so
 
 ## macOS
 
-Installer Python 3, si ce n'est pas déjà fait, depuis Python.org:
+En général, Python 3 est déjà installé. Si ce n'est pas le cas, vous pouvez le télécharger depuis:
 
     https://www.python.org/downloads/
 
 Puis ouvrir un terminal et entrer la commande:
 
-    pip3 install -r requirements.txt
+    pip3 install --user -r requirements.txt
 
 
 # LANCER CONSMASTER
