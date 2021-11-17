@@ -14,17 +14,13 @@ Consmaster a été réalisé par Josué Melka, Calev Eliacheff et David Calmeill
 Ce programme a pour but de vous permettre de vous entrainer à manipuler les différentes représentations lisp : listes simples, notation à points et représentation graphique des doublets.
 
 
-# INSTALLATION (sous ubuntu)
+# INSTALLATION (sous Ubuntu ou Debian)
 
 Pour installer Consmaster, téléchargez et décompressez l'archive dans le répertoire de votre choix:
 
     wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
     unzip consmaster.zip
     cd consmaster-master
-
-Consmaster peut fonctionner en mode portable depuis le répertoire dans lequel vous l'avez mis.
-
-Dans la console, utilisez la commande `cd` pour vous placer dans le répertoire `consmaster`.
 
 Pour installer toutes les dépendances de Consmaster, entrer la commande:
 
@@ -36,7 +32,27 @@ Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** 
 
 **Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plue le cas.*
 
+
+# INSTALLATION (sous Fedora)
+
+Pour installer Consmaster, téléchargez et décompressez l'archive dans le répertoire de votre choix:
+
+    wget https://github.com/andrivet/consmaster/archive/refs/heads/master.zip -O consmaster.zip
+    unzip consmaster.zip
+    cd consmaster-master
+
+Pour installer toutes les dépendances de Consmaster, entrer la commande:
+
+    bash install-fedora.sh
+
+Soyez patient, **le téléchargement des dépendances prend plusieurs minutes** (environ 300 MiB à télécharger). Après installation, vous pouvez lancer Consmaster avec la commande:
+
+    python3 src/consmaster.py
+
+
 # REMARQUES GÉNÉRALES
+
+Consmaster peut fonctionner en mode portable depuis le répertoire dans lequel vous l'avez mis.
 
 Attention, ne fermez pas la console pendant l'utilisation du programme sinon vous provoquerez son arrêt.
 
