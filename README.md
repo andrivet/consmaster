@@ -1,16 +1,19 @@
+**Note**: *Cette version est un fork du programme d'origine et est un portage pour Qt6 et PySide6.
+Elle fonctionne donc sur les systèmes d'exploitation récents contrairement à la version d'origine.*
 
-# INTRODUCTION
+# Introduction
 
 Ce programme a pour but de vous permettre de vous entrainer à manipuler les différentes représentations lisp : listes simples, notation à points et représentation graphique des doublets.
 
 ![](doc/consmaster.png)
+
 Interface de Consmaster
 
 ![](doc/cons_drawing.png)
+
 Interface de Cons-Drawing
 
-
-# COMPATIBILITE
+# Compatibilité
 
 Consmaster est compatible et a été testé avec Debian, Ubuntu, Fedora, macOS et Windows.
 
@@ -20,13 +23,12 @@ Pour la majorité des systèmes d'exploitation, il existe une solution (workarou
 Le détail des systèmes d'exploitation testés est le suivant:
 
 * Debian: 10, 11
-* Ubuntu: 2020.04, 2021.10
+* Ubuntu: 2020.04, 2021.10, 2022.04
 * Fedora: 35 Workstation
 * macOS: Catalina (10.15), Big Sur (11), Monterey (12)
 * Windows: 10, 11
 
-
-# INSTALLATION
+# Installation
 
 **Note**: *Comme souvent en informatique, il y a de multiples manières de faire quelque chose.
 Les procédures d'installation ci-dessous sont juste une de ces manières.*
@@ -91,8 +93,11 @@ Puis ouvrir un terminal et entrer la commande:
 
     pip3 install --user -r requirements.txt
 
+Si vous utilisez un environnement virtuel Python (venv par exemple), vous devrez peut-être plutôt utiliser:
 
-# LANCER CONSMASTER
+    pip3 install -r requirements.txt
+
+# Lancer Consmaster
 
 Après installation, vous pouvez lancer Consmaster avec la commande:
 
@@ -105,7 +110,7 @@ Sous Windows 10 et 11, la commande est légèrement différente:
 **Note**: *Les instructions précédentes indiquaient d'aller dans le répertoire `src` mais ce n'est plus le cas.*
 
 
-# REMARQUES GÉNÉRALES
+# Remarques générales
 
 Consmaster peut fonctionner en mode portable depuis le répertoire dans lequel vous l'avez mis.
 
@@ -115,7 +120,7 @@ Le logiciel est prévu à l'origine pour fonctionner avec un serveur qui enregis
 
 Ne faites pas attention aux éventuels messages d'erreur résultant de l'absence de connexion au serveur.
 
-# UTILISATION DU LOGICIEL
+# Utilisation de Consmaster
 
 Au premier démarrage du programme, n'hésitez pas à vous enregistrer pour conserver votre progression dans les exercices.
 
@@ -142,8 +147,7 @@ Ce mode vous permet de vous entrainer à passer de la notation graphique à la n
 La aussi le pretty print n'est pas vérifié. Faites attention à bien respecter les espaces entre chaque atome et entre les parenthèses. Attention il n'y a jamais d'espace après une parenthèse ouvrante ou avant une parenthèse fermante.
 
 
-
-# UTILISATION DE CONS_DRAWING POUR CREER DES SCHEMAS
+# Utilisation de `cons_drawing` pour créer des schémas
 
 Pour créer des schémas pour répondre aux exercices du cours de lisp, vous pouvez lancer le programme Cons_drawing :
 
